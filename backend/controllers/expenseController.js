@@ -1,4 +1,4 @@
-import expenseModel from "../models/Expense.js";
+import expenseModel from "../models/expense.js";
 
 // add new expense
 
