@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx';
 import SignupPage from './pages/SignupPage.jsx';
 import HomePage from './pages/HomePage.jsx';
-import TrackExpense from './pages/trackExpense.jsx';
+import TrackExpense from './pages/TrackExpense.jsx';
 
 const App = () => {
   
