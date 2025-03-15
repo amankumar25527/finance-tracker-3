@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-    const url = "http://localhost:4000";
+    const url = "https://finance-tracker-3-akbj.onrender.com";
     const [token, setToken] = useState(localStorage.getItem("token") || ""); // Initialize with localStorage value
 
     useEffect(() => {
