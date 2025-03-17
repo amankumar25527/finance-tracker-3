@@ -29,7 +29,7 @@ const register=async(req,res,next)=>{
             })
         }
         if(password.length<5){
-            return res.json({
+            return res.status(400).json({
                 success:false,
                 message:"please enter strong password more then 5 length"
             })
