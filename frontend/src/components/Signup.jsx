@@ -13,16 +13,25 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${url}/api/auth/register`, { name, email, password });
-      localStorage.setItem("token", response.data.token);
-      setToken(localStorage.getItem("token"));
-      navigate("/");
-      toast.success(response.data.message);
+        const response = await axios.post(`${url}/api/auth/register`, { name, email, password });
+        
+        localStorage.setItem("token", response.data.token);
+        setToken(localStorage.getItem("token"));
+        navigate("/");
+        toast.success(response.data.message, { position: "top-right" });
+
     } catch (error) {
-      toast.error("error")
-      console.error("Signup Error:", error.response?.data || error.message);
+        console.error("Signup Error:", error.response?.data || error.message);
+        
+        // Show specific error message if available
+        if (error.response && error.response.data && error.response.data.message) {
+            toast.error(error.response.data.message, { position: "top-right" });
+        } else {
+            toast.error("Something went wrong. Please try again!", { position: "top-right" });
+        }
     }
-  };
+};
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-purple-100 p-4">
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
