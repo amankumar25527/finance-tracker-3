@@ -22,7 +22,7 @@ const Loginx = () => {
       navigate("/");
     } catch (error) {
       console.error("Login Error:", error.response?.data || error.message);
-      toast.error("login error",error);
+      toast.error("login error",error.response.data.message || error.message);
     }
   };
   
