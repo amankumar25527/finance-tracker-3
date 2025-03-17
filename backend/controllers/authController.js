@@ -23,7 +23,7 @@ const register=async(req,res,next)=>{
         }
         // validating user email password is strong or not
         if(!validator.isEmail(email)){
-            return res.json({
+            return res.status(400).json({
                 success:false,
                 message:"invalid email"
             })
