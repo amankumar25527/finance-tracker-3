@@ -19,6 +19,7 @@ const Signup = () => {
       navigate("/");
       toast.success(response.data.message);
     } catch (error) {
+      toast.error(error.response.data.message)
       console.error("Signup Error:", error.response?.data || error.message);
     }
   };
