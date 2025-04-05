@@ -7,7 +7,7 @@ function Home() {
     const navigate=useNavigate();
     const{token}=useContext(StoreContext);
     return (
-        <div className="bg-purple-100  min-h-screen flex items-center justify-center px-4 py-8">
+        <div className="bg-purple-100  h-auto flex flex-col items-center justify-center px-4 py-8">
             <div className="bg-white shadow-lg rounded-2xl max-w-7xl px-4 flex flex-col md:flex-row items-center">
                 {/* Left Content */}
                 <div className="md:w-1/2">
